@@ -18,6 +18,11 @@ app.use(session({
 
 app.set('view engine', 'ejs');
 
+// RUTAS
+app.get('/login', (req, res) => {
+    res.render('login/login');
+});
+
 app.listen(5000, (req, res) => {
     console.log("Servidor corriendo en https://localhost:5000");
 });
