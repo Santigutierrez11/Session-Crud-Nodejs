@@ -41,12 +41,12 @@
             <div class="right">
                 <div class="content">
                     <h2>Login</h2>
-                    <form method="post" onsubmit="return false;">
+                    <form action="auth" method="post">
                         <div class="form-group">
-                            <input type="text" placeholder="Username" autocomplete="off">
-                            <input type="password" placeholder="Password" autocomplete="off">
+                            <input name="username" type="text" placeholder="Username" autocomplete="off">
+                            <input name="pass" type="password" placeholder="Password" autocomplete="off">
                         </div>
-                        <button id="goRight" class="off">Sign Up</button>
+                        <a id="goRight" class="off button">Sign Up</a>
                         <button id="login" type="submit">Login</button>
                     </form>
                 </div>
