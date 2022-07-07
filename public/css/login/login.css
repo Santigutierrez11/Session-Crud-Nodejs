@@ -84,7 +84,7 @@ body {
     font-size: 35px;
 }
  
-button {
+button, .button{
     background: #03A9F4;
     padding: 10px 16px;
     width: auto;
@@ -100,9 +100,10 @@ button {
     outline: 0;
     margin: 15px 15px 15px 0;
     transition: all 0.25s;
+    cursor: pointer;
 }
  
-button:hover {
+.button, button:hover {
     background: #0288D1;
     box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
 }

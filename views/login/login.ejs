@@ -18,24 +18,24 @@
             <div class="left">
                 <div class="content">
                     <h2>Registrarse</h2>
-                    <form method="post" onsubmit="return false;">
+                    <form action="registrar" method="post">
                         <div class="form-group">
-                            <input type="text" name="nombre" placeholder="Nombre">
-                            <input type="text" name="apellido" placeholder="Apellido">
-                            <select name="rol" class="form-select">
+                            <input type="text" name="nombre" placeholder="Nombre" autocomplete="off" required>
+                            <input type="text" name="apellido" placeholder="Apellido" autocomplete="off" required>
+                            <select name="rol" class="form-select" required>
                                 <option disabled selected>Rol</option>
                                 <option value="profesor">Profesor</option>
                                 <option value="estudiante">Estudiante</option>
                             </select>
-                            <input type="text" name="username" placeholder="Username" />
-                            <input type="password" name="pass" placeholder="Password" />
+                            <input type="text" name="username" placeholder="Username" autocomplete="off" required>
+                            <input type="password" name="pass" placeholder="Password" autocomplete="off" required>
                         </div>
                         <div class="form-group"></div>
                         <div class="form-group"></div>
                         <div class="form-group"></div>
+                        <a id="goLeft" class="off button">Login</a>
+                        <button type="submit">Guardar</button>
                     </form>
-                    <button id="goLeft" class="off">Login</button>
-                    <button>Guardar</button>
                 </div>
             </div>
             <div class="right">
@@ -43,8 +43,8 @@
                     <h2>Login</h2>
                     <form method="post" onsubmit="return false;">
                         <div class="form-group">
-                            <input type="text" placeholder="Username" />
-                            <input type="password" placeholder="Password" />
+                            <input type="text" placeholder="Username" autocomplete="off">
+                            <input type="password" placeholder="Password" autocomplete="off">
                         </div>
                         <button id="goRight" class="off">Sign Up</button>
                         <button id="login" type="submit">Login</button>
@@ -55,5 +55,19 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./resources/js/login.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if (typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: '<%= showConfirmButton %>',
+                timer: '<%= timer %>'
+            }).then(() => {
+                window.location= '<%= ruta %>'
+            });
+        </script>
+    <% } %>
 </body>
 </html>
